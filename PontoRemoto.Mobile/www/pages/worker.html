@@ -1,0 +1,56 @@
+<mbl-page>
+	<div class="bar bar-header bar-dark">
+		<h1 class="title">Ponto Remoto</h1>
+	</div>
+	<div class="bar bar-subheader bar-positive">
+		<h1 class="title">{{clientName}}</h1>
+	</div>
+
+	<mbl-page-content>
+		<div>
+			<div class="card">
+				<div class="item item-text-wrap item-divider">
+					Aprovação do dispositivo
+				</div>
+				<div class="item item-text-wrap">
+					Para que você possa utilizar o seu dispositivo
+					para registrar ponto com segurança, você deve
+					cadastrá-lo no sistema e a empresa deverá aprovar
+					a sua utilização.<br/><br/>
+					
+					Para cadastrar o seu dispositivo, preencha os dados abaixo:
+				</div>
+			</div>
+			<form name="createWorkerForm" ng-submit="createWorker()">
+				<div class="list">
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Nome:</span>
+						<input type="text" name="name" ng-model="createWorkerViewModel.name" placeholder="João" required="required" ng-minlength="5">
+						<div class="custom-error" ng-show="createWorkerForm.name.$dirty && createWorkerForm.name.$invalid">
+							<span ng-show="createWorkerForm.name.$error.required">Campo obrigatório.</span>
+							<span ng-show="createWorkerForm.name.$error.minlength">Mínimo 5 caracteres.</span>
+						</div>
+					</label>
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">{{workerIdentificationLabel}}:</span>
+						<input type="text" name="identification" ng-model="createWorkerViewModel.identification" placeholder="" required="required">
+						<div class="custom-error" ng-show="createWorkerForm.identification.$dirty && createWorkerForm.identification.$invalid">
+							<span ng-show="createWorkerForm.identification.$error.required">Campo obrigatório.</span>
+						</div>
+					</label>
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Apelido desse dispositivo:</span>
+						<input type="text" name="deviceAlias" ng-model="createWorkerViewModel.deviceAlias" placeholder="Tablet do João" required="required" ng-minlength="5">
+						<div class="custom-error" ng-show="createWorkerForm.deviceAlias.$dirty && createWorkerForm.deviceAlias.$invalid">
+							<span ng-show="createWorkerForm.deviceAlias.$error.required">Campo obrigatório.</span>
+							<span ng-show="createWorkerForm.deviceAlias.$error.minlength">Mínimo 5 caracteres.</span>
+						</div>
+					</label>
+				</div>
+				<div class="padding">
+					<button type="submit" class="button button-block button-positive" ng-disabled="createWorkerForm.$invalid">Cadastrar</button>
+				</div>
+			</form>
+		</div>
+	</mbl-page-content>
+</mbl-page>

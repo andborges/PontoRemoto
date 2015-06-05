@@ -1,0 +1,35 @@
+<mbl-page>
+	<div class="bar bar-header bar-dark">
+		<h1 class="title">Ponto Remoto</h1>
+	</div>
+
+	<mbl-page-content>
+		<div>
+			<div class="card">
+				<div class="item item-text-wrap item-divider">
+					Bem vindo ao aplicativo Ponto Remoto
+				</div>
+				<div class="item item-text-wrap">					
+					Para começar, por favor informe o código da empresa
+					que deseja registrar ponto
+				</div>
+			</div>
+			<form name="saveClientForm" ng-submit="saveClient()">
+				<div class="list">
+				  <label class="item item-input item-stacked-label">
+					<span class="input-label">Código da Empresa:</span>
+					<input type="text" name="identification" ng-model="client.identification" required="required" ng-minlength="5" ng-pattern="/^[a-zA-Z0-9]*$/">
+					<div class="custom-error" ng-show="saveClientForm.identification.$dirty && saveClientForm.identification.$invalid">
+						<span ng-show="saveClientForm.identification.$error.required">Campo obrigatório.</span>
+						<span ng-show="saveClientForm.identification.$error.minlength">Mínimo 5 caracteres.</span>
+						<span ng-show="saveClientForm.identification.$error.pattern">Só letras e números e sem espaços.</span>
+					</div>
+				  </label>
+				</div>
+				<div class="padding">
+					<button type="submit" class="button button-block button-positive" ng-disabled="saveClientForm.$invalid">Salvar</button>
+				</div>
+			</form>
+		</div>
+	</mbl-page-content>
+</mbl-page>

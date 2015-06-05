@@ -1,0 +1,11 @@
+﻿@{
+    var validationErrors = string.Join("<br />", ViewData.ModelState.Values.Where(e => e.Errors.Count > 0).SelectMany(e => e.Errors).Select(e => e.ErrorMessage).ToArray());
+}
+
+@if (!string.IsNullOrEmpty(validationErrors))
+{
+    <div class="alert alert-danger alert-dismissable">
+        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+        @validationErrors
+    </div>
+}

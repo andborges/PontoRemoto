@@ -1,0 +1,24 @@
+<mbl-page>
+	<div class="bar bar-header bar-dark">
+		<h1 class="title">Ponto Remoto</h1>
+	</div>
+	<div class="bar bar-subheader bar-positive">
+		<h1 class="title">{{clientName}}</h1>
+	</div>
+
+	<mbl-page-content>
+		<div>
+			<ul class="list">
+				<li class="item item-divider item-button-right"><i class="icon ion-upload"></i> Registros de ponto pendentes <button class="button button-assertive" ng-click="clearPending()">Limpar</button></li>
+				<li class="item" ng-repeat="checkin in checkins.pending track by $index">
+					{{checkin.date}}: {{checkinTypeDescription(checkin.type)}}
+				</li>
+				
+				<li class="item item-divider item-button-right"><i class="icon ion-cloud"></i> Registros de ponto salvos <button class="button button-assertive" ng-click="clearSaved()">Limpar</button></li>
+				<li class="item" ng-repeat="checkin in checkins.saved track by $index">
+					{{checkin.date}}: {{checkinTypeDescription(checkin.type)}}
+				</li>
+			</ul>
+		</div>
+	</mbl-page-content>
+</mbl-page>

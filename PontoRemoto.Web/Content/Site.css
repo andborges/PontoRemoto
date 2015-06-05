@@ -1,0 +1,17 @@
+﻿body .logo {
+    text-align: center;
+    font-size: 24pt;
+    font-weight: bold;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+    body .logo .phrase {
+        font-size: 9pt;
+        font-weight: normal;
+    }
+
+body.mini-navbar .logo {
+    display: none;
+}

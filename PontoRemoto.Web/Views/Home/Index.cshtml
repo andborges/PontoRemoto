@@ -1,0 +1,482 @@
+﻿@using PontoRemoto.Application.Resources
+@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Add Your favicon here -->
+    <!--<link rel="icon" href="img/favicon.ico">-->
+
+    <title>@Texts.ApplicationName @Texts.ApplicationNameComplement</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/animate.min.css" rel="stylesheet">
+    <link href="~/fonts/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src=" https />/oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Custom styles for this template -->
+    <link href="~/Content/home.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+    <div class="navbar-wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">@Texts.ApplicationName.ToUpper() @Texts.ApplicationNameComplement.ToUpper()</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="page-scroll" href="#page-top">Home</a></li>
+                        <li><a class="page-scroll" href="#features">Funcionalidades</a></li>
+                        @*<li><a class="page-scroll" href="#pricing">Planos</a></li>*@
+                        <li><a class="page-scroll" href="#contact">Contato</a></li>
+                        <li class="login">@Html.ActionLink(Labels.LogIn, "Admin", "Home")</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="inSlider" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#inSlider" data-slide-to="0" class="active"></li>
+            <li data-target="#inSlider" data-slide-to="1"></li>
+            <li data-target="#inSlider" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>
+                            Seus funcionários<br />
+                            marcando ponto<br />
+                            de onde estiverem<br />
+                            diretamente no<br />
+                            seu sistema
+                        </h1>
+                        <p>Utilizando o seu próprio celular ou <i>tablet</i>.</p>
+                        <p><a class="btn btn-lg btn-primary page-scroll" href="#features" role="button">Conheça</a></p>
+                    </div>
+                    @*<div class="carousel-image wow zoomIn">
+                        <img src="~/Images/Home/laptop.png" alt="laptop" />
+                    </div>*@
+                </div>
+
+                <!-- Set background for slide in css -->
+                <div class="header-back one"></div>
+            </div>
+
+            <div class="item">
+                <div class="container">
+                    <div class="carousel-caption blank">
+                        <h1>
+                            Ideal para funcionários<br />
+                            terceirizados ou em home<br/>
+                            office
+                        </h1>
+                        <p><a class="btn btn-lg btn-primary page-scroll" href="#features" role="button">Conheça</a></p>
+                    </div>
+                </div>
+
+                <!-- Set background for slide in css -->
+                <div class="header-back two"></div>
+            </div>
+
+            <div class="item">
+                <div class="container">
+                    <div class="carousel-caption blank">
+                        <h1>
+                            Chega de preenchimento<br/>
+                            manual de <i>timesheets</i><br />
+                            pelos seus funcionários
+                        </h1>
+                        <p>Direto do aplicativo para seu sistema.</p>
+                        <p><a class="btn btn-lg btn-primary page-scroll" href="#features" role="button">Conheça</a></p>
+                    </div>
+                </div>
+
+                <!-- Set background for slide in css -->
+                <div class="header-back three"></div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#inSlider" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#inSlider" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <section id="features" class="container services">
+        <div class="row">
+            <div class="col-sm-3">
+                <h2>Integração</h2>
+                <p>O ponto registrado pelo seu funcionário no aplicativo é registrado no seu próprio sistema de gestão de ponto.</p>
+            </div>
+            <div class="col-sm-3">
+                <h2>Segurança</h2>
+                <p>Tanto o registro de ponto quanto a integração com o seu sistema utiliza criptografia de última geração.</p>
+            </div>
+            <div class="col-sm-3">
+                <h2>Simplicidade</h2>
+                <p>O registro de ponto é feito em um aplicativo super simples de usar, em celulares ou tablets com Android, IPhone ou Windows Phone.</p>
+            </div>
+            <div class="col-sm-3">
+                <h2>Confiabilidade</h2>
+                <p>Somente o dono do dispositivo poderá registrar o ponto, e a localização do funcionário é registrada junto ao ponto, através de GPS.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container features">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="navy-line"></div>
+                <h1>Seus funcionários registram ponto<br /> <span class="navy"> diretamente no seu sistema</span> </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 text-center wow fadeInLeft">
+                <div>
+                    <i class="fa fa-mobile features-icon"></i>
+                    <h2>Multiplataforma</h2>
+                    <p>Aplicativos para os principais sistemas operacionais móveis: Android, iOS (Apple) e Windows Phone.</p>
+                </div>
+                <div class="m-t-lg">
+                    <i class="fa fa-map-marker features-icon"></i>
+                    <h2>Geolocalização</h2>
+                    <p>A localização do seu funcionário é registrada junto com o ponto, utilizando o GPS do dispositivo.</p>
+                </div>
+            </div>
+            <div class="col-md-6 text-center wow zoomIn">
+                <img src="~/Images/Home/comm1.png" alt="dashboard" class="img-responsive">
+            </div>
+            <div class="col-md-3 text-center wow fadeInRight">
+                <div>
+                    <i class="fa fa-cogs features-icon"></i>
+                    <h2>Integração</h2>
+                    <p>O seu sistema pode ser feito em qualquer linguagem de programação: ASP.NET, Java, PHP, Ruby, Node.js, etc...</p>
+                </div>
+                <div class="m-t-lg">
+                    <i class="fa fa-laptop features-icon"></i>
+                    <h2>Administração</h2>
+                    <p>Através da área administrativa do sistema, você tem acesso a diversas configurações, além de gerenciar o acesso dos seus funcionários.</p>
+                </div>
+            </div>
+        </div>
+
+        @*<div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="navy-line"></div>
+                    <h1>Discover great feautres</h1>
+                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. </p>
+                </div>
+            </div>
+            <div class="row features-block">
+                <div class="col-lg-6 features-text wow fadeInLeft">
+                    <small>INSPINIA</small>
+                    <h2>Perfectly designed </h2>
+                    <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
+                    <a href="" class="btn btn-primary">Learn more</a>
+                </div>
+                <div class="col-lg-6 text-right wow fadeInRight">
+                    <img src="~/Images/Home/dashboard.png" alt="dashboard" class="img-responsive pull-right">
+                </div>
+            </div>*@
+    </section>
+
+    @*<section class="features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="navy-line"></div>
+                        <h1>Even more great features</h1>
+                        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. </p>
+                    </div>
+                </div>
+                <div class="row features-block">
+                    <div class="col-lg-3 features-text wow fadeInLeft">
+                        <small>INSPINIA</small>
+                        <h2>Perfectly designed </h2>
+                        <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
+                        <a href="" class="btn btn-primary">Learn more</a>
+                    </div>
+                    <div class="col-lg-6 text-right m-t-n-lg wow zoomIn">
+                        <img src="~/Images/Home/iphone.jpg" class="img-responsive" alt="dashboard">
+                    </div>
+                    <div class="col-lg-3 features-text text-right wow fadeInRight">
+                        <small>INSPINIA</small>
+                        <h2>Perfectly designed </h2>
+                        <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with latest jQuery plugins.</p>
+                        <a href="" class="btn btn-primary">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="navy-line"></div>
+                        <h1>More and more extra great feautres</h1>
+                        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5 col-lg-offset-1 features-text">
+                        <small>INSPINIA</small>
+                        <h2>Perfectly designed </h2>
+                        <i class="fa fa-bar-chart big-icon pull-right"></i>
+                        <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with.</p>
+                    </div>
+                    <div class="col-lg-5 features-text">
+                        <small>INSPINIA</small>
+                        <h2>Perfectly designed </h2>
+                        <i class="fa fa-bolt big-icon pull-right"></i>
+                        <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5 col-lg-offset-1 features-text">
+                        <small>INSPINIA</small>
+                        <h2>Perfectly designed </h2>
+                        <i class="fa fa-clock-o big-icon pull-right"></i>
+                        <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with.</p>
+                    </div>
+                    <div class="col-lg-5 features-text">
+                        <small>INSPINIA</small>
+                        <h2>Perfectly designed </h2>
+                        <i class="fa fa-users big-icon pull-right"></i>
+                        <p>INSPINIA Admin Theme is a premium admin dashboard template with flat design concept. It is fully responsive admin dashboard template built with Bootstrap 3+ Framework, HTML5 and CSS3, Media query. It has a huge collection of reusable UI components and integrated with.</p>
+                    </div>
+                </div>
+            </div>
+        </section>*@
+
+    @*<section id="pricing" class="pricing">
+            <div class="container">
+                <div class="row m-b-lg">
+                    <div class="col-lg-12 text-center">
+                        <div class="navy-line"></div>
+                        <h1>Planos</h1>
+                        <p>Comece a testar imediatamente, cadastrando-se no plano gratuito.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 wow zoomIn">
+                        <ul class="pricing-plan list-unstyled selected">
+                            <li class="pricing-title">Gratuito</li>
+                            <li class="pricing-desc">
+                                Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.
+                            </li>
+                            <li class="pricing-price"><span>Grátis</span></li>
+                            <li>Dashboards</li>
+                            <li>Projects view</li>
+                            <li>Contacts</li>
+                            <li>Calendar</li>
+                            <li>AngularJs</li>
+                            <li><a class="btn btn-primary btn-xs" href="#">Cadastrar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 wow zoomIn">
+                        <ul class="pricing-plan list-unstyled">
+                            <li class="pricing-title">Básico</li>
+                            <li class="pricing-desc">
+                                Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.
+                            </li>
+                            <li class="pricing-price"><span>R$20</span> / month</li>
+                            <li>Dashboards</li>
+                            <li>Projects view</li>
+                            <li>Contacts</li>
+                            <li>Calendar</li>
+                            <li>AngularJs</li>
+                            <li><a class="btn btn-primary btn-xs" href="#">Assinar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 wow zoomIn">
+                        <ul class="pricing-plan list-unstyled">
+                            <li class="pricing-title">Padrão</li>
+                            <li class="pricing-desc">
+                                Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.
+                            </li>
+                            <li class="pricing-price"><span>R$50</span> / month</li>
+                            <li>Dashboards</li>
+                            <li>Projects view</li>
+                            <li>Contacts</li>
+                            <li>Calendar</li>
+                            <li>AngularJs</li>
+                            <li><strong>Support platform</strong></li>
+                            <li class="plan-action"><a class="btn btn-primary btn-xs" href="#">Assinar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 wow zoomIn">
+                        <ul class="pricing-plan list-unstyled">
+                            <li class="pricing-title">Premium</li>
+                            <li class="pricing-desc">
+                                Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.
+                            </li>
+                            <li class="pricing-price"><span>R$250</span> / month</li>
+                            <li>Dashboards</li>
+                            <li>Projects view</li>
+                            <li>Contacts</li>
+                            <li>Calendar</li>
+                            <li>AngularJs</li>
+                            <li><a class="btn btn-primary btn-xs" href="#">Assinar</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row m-t-lg">
+                    <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg">
+                        <p>*Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. <span class="navy">Various versions</span>  have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    </div>
+                </div>
+            </div>
+        </section>*@
+
+    <section id="contact" class="gray-section contact">
+        <div class="container">
+            <div class="row m-b-lg">
+                <div class="col-lg-12 text-center">
+                    <div class="navy-line"></div>
+                    <h1>Se interessou?<br />Cadastre-se no formulário abaixo,<br />em breve entraremos em contato</h1>
+                    <p>Estamos em fase final de testes com alguns clientes beta, a nossa estimativa de lançamento é para as próximas semanas.</p>
+                </div>
+            </div>
+
+            <div class="row m-b-lg">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8">
+                    @{
+                        var ajaxOptions = new AjaxOptions
+                        {
+                            HttpMethod = "POST",
+                            LoadingElementId = "sendingEmailContact",
+                            OnComplete = "ajaxFormComplete",
+                            OnBegin = "ajaxFormBegin"
+                        };
+                    }
+
+                    @using (Ajax.BeginForm("Contact", "Home", ajaxOptions, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Empresa:</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-building"></i></span>
+                                    <input type="text" name="Company" class="form-control" required="required">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Seu nome:</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-male"></i></span>
+                                    <input type="text" name="Name" class="form-control" required="required">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Seu email:</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                    <input type="email" name="Email" class="form-control" required="required">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <button class="btn btn-primary" type="submit">Enviar</button>
+                                <span id="sendingEmailContact">
+                                    <i class="fa fa-spinner fa-spin"></i> Enviando...
+                                </span>
+                                <span id="sentEmailContact">
+                                    Email enviado com sucesso! Em breve entraremos em contato.
+                                </span>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+
+            @*<div class="row">
+                    <div class="col-lg-12 text-center">
+                        <a href="mailto:test@email.com" class="btn btn-primary">Send us mail</a>
+                        <p class="m-t-sm">
+                            Or follow us on social platform
+                        </p>
+                        <ul class="list-inline social-icon">
+                            <li>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>*@
+
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center m-t-lg m-b-lg">
+                    <p>
+                        <strong>@Texts.ApplicationName @Texts.ApplicationNameComplement &copy; @DateTime.Now.Year</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/plugins/classie/classie.js"></script>
+    <script src="~/Scripts/plugins/cbpAnimatedHeader/cbpAnimatedHeader.js"></script>
+    <script src="~/Scripts/plugins/wow/wow.min.js"></script>
+    <script src="~/Scripts/home.js"></script>
+
+    <script type="text/javascript">
+        function ajaxFormBegin() {
+            $("#sentEmailContact").hide();
+        }
+
+        function ajaxFormComplete() {
+            $("#sentEmailContact").show();
+        }
+    </script>
+</body>
+</html>

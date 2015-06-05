@@ -1,0 +1,4 @@
+cd approve
+binary
+put ../platforms/android/bin/Approve.apk
+quit

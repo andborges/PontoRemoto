@@ -1,0 +1,41 @@
+<mbl-page>
+	<div class="bar bar-header bar-dark">
+		<h1 class="title">Ponto Remoto</h1>
+	</div>
+	<div class="bar bar-subheader bar-positive">
+		<h1 class="title">{{clientName}}</h1>
+	</div>
+
+	<mbl-page-content>
+		<div>
+			<div class="card">
+				<div class="item item-text-wrap item-divider" ng-click="gpsRefresh()">
+					<i class="icon ion-location"></i> Sua localização <i class="icon ion-refresh"></i>
+				</div>
+				<div class="item item-text-wrap">
+					<div ng-show="$root.latitude">
+						Latitude: {{$root.latitude}}<br/>
+						Longitude: {{$root.longitude}}
+					</div>
+					<div ng-show="enableGpsRefresh && !$root.latitude">
+						<div ng-click="gpsRefresh()">
+							Não foi possível obter a sua localização, sem essa informação não é permitido o registro de ponto.<br/><br/>
+							Verifique se o GPS ou acesso à internet do seu dispositivo estão ativados e toque aqui para tentar novamente.<br/><br/>
+							
+							<div style="text-align: center"><img src="img/touch.png" /></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="checkinButtons" class="padding">
+				<form name="checkinForm" ng-submit="saveClient()">
+					<input type="hidden" name="latitude" required="required" ng-model="latitude" />
+					<input type="hidden" name="longitude" required="required" ng-model="longitude" />
+
+					<button class="button button-positive" ng-click="checkinArriving()" ng-disabled="checkinForm.$invalid"><i class="icon ion-log-in"></i> Marcar Entrada</button><br/><br/>
+					<button class="button button-calm" ng-click="checkinLeaving()" ng-disabled="checkinForm.$invalid">Marcar Saída <i class="icon ion-log-out"></i></button>
+				</form>
+			</div>
+		</div>
+	</mbl-page-content>
+</mbl-page>

@@ -1,0 +1,126 @@
+﻿@using PontoRemoto.Application.Domain
+@using PontoRemoto.Application.Resources
+@model IEnumerable<PontoRemoto.Web.Models.WorkerViewModel>
+
+@{
+    ViewBag.Title = Labels.YourWorkers;
+}
+
+@section topcontent
+{
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-9">
+            <h2>@Labels.YourWorkers</h2>
+
+            <ol class="breadcrumb">
+                <li>
+                    <a href="@Url.Action("Admin", "Home")">@Labels.Home</a>
+                </li>
+                <li class="active">
+                    <strong>@Labels.YourWorkers</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            @*<div class="ibox-title">
+                <h5></h5>
+                <div class="ibox-tools"></div>
+            </div>*@
+            <div class="ibox-content">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Identification)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DeviceId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DeviceModel)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DeviceAlias)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Status)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr id="@item.Id">
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Identification)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DeviceId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DeviceModel)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DeviceAlias)
+                                </td>
+                                <td upd-text="StatusDescription">
+                                    @Html.DisplayFor(modelItem => item.StatusDescription)
+                                </td>
+                                <td style="text-align: center; vertical-align: middle">
+                                    <div class="confirm-section" style="display: @(item.Status != WorkerStatus.Revoked ? "none" : "block"); width: 180px" upd-hide="$Status != @((int)WorkerStatus.Revoked)">
+                                        <a class="confirm-link" href="#">@Labels.GrantAccess</a>
+
+                                        @using (Ajax.BeginForm("GrantAccess", "Worker", new AjaxOptions { HttpMethod = "POST", OnComplete = "ajaxFormComplete" }, new { style = "display: none" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="id" value="@item.Id" />
+                                            <input type="submit" class="btn btn-primary" value="@Labels.GrantAccessConfirmation" />
+                                        }
+                                    </div>
+
+                                    <div class="confirm-section" style="display: @(item.Status == WorkerStatus.Revoked ? "none" : "block"); width: 180px" upd-hide="$Status == @((int)WorkerStatus.Revoked)">
+                                        <a class="confirm-link" href="#">@Labels.RevokeAccess</a>
+
+                                        @using (Ajax.BeginForm("RevokeAccess", "Worker", new AjaxOptions { HttpMethod = "POST", OnComplete = "ajaxFormComplete" }, new { style = "display: none" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="id" value="@item.Id" />
+                                            <input type="submit" class="btn btn-primary" value="@Labels.RevokeAccessConfirmation" />
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function ajaxFormComplete(data) {
+        var response = data.responseJSON;
+
+        if (response.Success) {
+            var worker = response.Data.Worker;
+            $("tr#" + worker.Id).upd(worker);
+
+            showStatusMessage(response.Message, "success");
+        } else if (data.message != "") {
+            showStatusMessage(response.Message, "error");
+        }
+    }
+</script>

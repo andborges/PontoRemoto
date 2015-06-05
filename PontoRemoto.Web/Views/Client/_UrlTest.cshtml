@@ -1,0 +1,25 @@
+﻿<div id="urlTest" class="popup" style="width: 800px;">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#urlTestFormTab" class="testFormTabLink" role="tab" data-toggle="tab">Formulário p/ Teste</a></li>
+        <li><a href="#urlTestResultsTab" class="testResultsTabLink" role="tab" data-toggle="tab">Resultado do Teste</a></li>
+        <li><a href="#urlInstructionsTab" role="tab" data-toggle="tab">Instruções</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane testFormTab active" id="urlTestFormTab">
+            @Html.Partial("_UrlTestForm")
+        </div>
+
+        <div class="tab-pane testResultsTab" id="urlTestResultsTab">
+            <div style="height: 400px; overflow: auto">
+                <div id="status" class="jsonCode" style="padding: 10px;"></div>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="urlInstructionsTab">
+            <div style="height: 400px; overflow: auto">
+                @Html.Partial("_UrlInstructions")
+            </div>
+        </div>
+    </div>
+</div>

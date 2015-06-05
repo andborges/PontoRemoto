@@ -1,0 +1,64 @@
+﻿<h3>Teste da url para obtenção de dados</h3>
+<p>
+    <form>
+        <input id="url" name="url" type="text" class="form-control" /><br />
+
+        Os seguintes valores serão enviados:<br />
+        <div class="form-horizontal">
+            <div class="form-group" style="margin-right: 0">
+                <label class="control-label col-md-2">RequestId</label>
+                <div class="col-md-10">
+                    <input id="requestId" name="requestId" type="text" value="@Guid.NewGuid()" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-right: 0">
+                <label class="control-label col-md-2">AppCode</label>
+                <div class="col-md-10">
+                    <input id="appCode" name="appCode" type="text" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-right: 0">
+                <label class="control-label col-md-2">AppSecret</label>
+                <div class="col-md-10">
+                    <input id="appSecret" name="appSecret" type="text" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-right: 0">
+                <label class="control-label col-md-2">Identificação do Funcionário</label>
+                <div class="col-md-10">
+                    <input id="identification" name="identification" type="text" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-right: 0">
+                <label class="control-label col-md-2">Data</label>
+                <div class="col-md-10">
+                    <input id="date" name="date" type="text" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-right: 0">
+                <label class="control-label col-md-2">Latitude</label>
+                <div class="col-md-10">
+                    <input id="latitude" name="latitude" type="text" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-right: 0">
+                <label class="control-label col-md-2">Longitude</label>
+                <div class="col-md-10">
+                    <input id="longitude" name="longitude" type="text" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-right: 0">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" onclick="executeTest('#urlTest')" value="Testar" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </form>
+</p>

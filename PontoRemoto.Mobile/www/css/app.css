@@ -1,0 +1,34 @@
+.mbl-page-content-wrapper {
+	top: 88px;
+}
+
+.snap-drawers .mbl-page-content-wrapper {
+	top: 0;
+}
+
+#checkinButtons {
+	text-align: center;
+}
+
+#checkinButtons button {
+	width: 200px;
+	height: 150px;
+}
+
+.item.item-divider.item-button-right {
+	padding: 16px;
+}
+
+.item.item-divider i.icon {
+	font-size: 1.3em;
+	vertical-align: middle;
+}
+
+.tab-item .badge {
+	right: 10%;
+}
+
+.tab-item .badge {
+	background-color: red !important;
+	color: white !important;
+}

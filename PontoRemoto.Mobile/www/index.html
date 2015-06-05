@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<title></title>
+	
+		<!-- Mobile It! -->
+		<link href="lib/mobileit/css/ionic.min.css" rel="stylesheet" />
+		<link href="lib/mobileit/css/angular-mobileitframework.css" rel="stylesheet" />
+		<link href="lib/snap.css" rel="stylesheet" />
+		
+		<!-- App Specific -->
+		<link href="css/app.css" rel="stylesheet" />
+	
+		<script src="lib/jquery-1.11.1.min.js"></script>
+		<script src="lib/jquery.linq.min.js"></script>
+		<script src="lib/angular/angular.min.js"></script>
+		<script src="lib/angular/angular-route.min.js"></script>
+		<script src="lib/angular/angular-animate.min.js"></script>
+		<script src="lib/angular/angular-sanitize.min.js"></script>
+		<script src="lib/iscroll.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/fastclick.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/snap.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="lib/ng-cordova.min.js" type="text/javascript"></script>
+		<script src="lib/mobileit/js/angular-mobileitframework.js" type="text/javascript" charset="utf-8"></script>
+		<script src="cordova.js" type="text/javascript"></script>
+		
+		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/routes.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/controllers.js" type="text/javascript" charset="utf-8"></script>
+	
+		<script type="text/javascript">			
+			document.addEventListener('deviceready', function onDeviceReady() {
+				angular.bootstrap(document, ['mblitApp']);
+			}, false);
+		</script>
+	</head>
+  
+	<body ng-cloak>
+		<mbl-screen></mbl-screen>
+		
+		<div class="tabs tabs-stable tabs-icon-top">
+			<a class="tab-item has-badge" ng-click="mbl.screen.go('/checkins')">
+				<i class="icon ion-clipboard"></i>
+				Registros
+				<span class="badge" ng-show="checkins.pending.length > 0">{{checkins.pending.length}}</span>
+			</a>
+			<a class="tab-item" ng-click="mbl.screen.go('/')">
+				<i class="icon ion-clock"></i>
+				Ponto
+			</a>
+			<a class="tab-item" ng-click="mbl.screen.go('/client')">
+				<i class="icon ion-gear-a"></i>
+				Configurações
+			</a>
+			<a class="tab-item" ng-click="mbl.app.exit(2)">
+				<i class="icon ion-power"></i>
+				Sair
+			</a>
+		</div>
+		<mbl-loader>Aguarde...</mbl-loader>
+	</body>
+</html>

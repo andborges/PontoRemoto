@@ -1,0 +1,27 @@
+<mbl-page>
+	<div class="bar bar-header bar-dark">
+		<h1 class="title">Ponto Remoto</h1>
+	</div>
+	<div class="bar bar-subheader bar-positive">
+		<h1 class="title">{{clientName}}</h1>
+	</div>
+
+	<mbl-page-content>
+		<div>
+			<div class="card">
+				<div class="item item-text-wrap item-divider">
+					Aguardando a aprovação do dispositivo
+				</div>
+				<div class="item item-text-wrap">
+					O seu dispositivo já está cadastrado no sistema,
+					mas a empresa ainda não o aprovou para que você
+					possa utilizá-lo para registrar ponto.
+				</div>
+			</div>
+			
+			<div class="padding">
+				<button class="button button-block button-positive" ng-click="refresh()">Verificar Aprovação</button>
+			</div>
+		</div>
+	</mbl-page-content>
+</mbl-page>

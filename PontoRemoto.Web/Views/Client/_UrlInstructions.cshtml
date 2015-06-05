@@ -1,0 +1,81 @@
+﻿<h4>
+    Será feita uma requisição POST para a URL indicada, enviando os seguintes parâmetros:
+    <ul>
+        <li>RequestId</li>
+        <li>Email</li>
+        <li>AppCode</li>
+        <li>AppSecret</li>
+    </ul>
+    Você deve retornar um objeto no formato JSON com a seguinte estrutura:
+</h4>
+
+<h5>Em caso de sucesso:</h5>
+<div class="jsonCode" style="padding: 10px;">
+    {
+    "RequestId": "4e8d82b8-e738-4180-8530-0f7c8eb70c1f",
+    "Success": true,
+    "Content": [
+    {
+    "Id": "1",
+    "Title": "Aprovação do item 1",
+    "Details": "Os seguintes valores foram alterados: Nome, endereço e telefone",
+    "Date": "@DateTime.Now.AddDays(-1).ToString("dd/MM/yyyy")",
+    "Resources": [
+    { "Name": "Aprovar", "Url": "https://www.test.com/Approve?id=1" },
+    { "Name": "Reprovar", "Url": "https://www.test.com/NotApprove?id=1" }
+    ]
+    },
+    {
+    "Id": "2",
+    "Title": "Aprovação do item 2",
+    "Details": "Os seguintes valores foram alterados: Nome e telefone",
+    "Date": "@DateTime.Now.ToString("dd/MM/yyyy")",
+    "Resources": [
+    { "Name": "Aprovar", "Url": "https://www.test.com/Approve?id=2" },
+    { "Name": "Reprovar", "Url": "https://www.test.com/NotApprove?id=2" }
+    ]
+    }
+    ]
+    }
+</div>
+
+<h5>Em caso de erro:</h5>
+<div class="jsonCode" style="padding: 10px;">
+    {
+    "RequestId": "4e8d82b8-e738-4180-8530-0f7c8eb70c1f",
+    "Success": false,
+    "Message": "AppCode ou AppSecret inválido"
+    }
+</div>
+
+<h4>
+    Serão criados botões para cada item da seção "Resources".
+    Cada botão terá o nome definido a partir da propriedade "Name" e
+    farão requisições POST para a URL definida na propriedade "Url",
+    enviando os seguintes parâmetros:
+    <ul>
+        <li>RequestId</li>
+        <li>Email</li>
+        <li>AppCode</li>
+        <li>AppSecret</li>
+    </ul>
+    que deverão retornar um objeto no formato JSON com a seguinte estrutura:
+</h4>
+
+<h5>Em caso de sucesso:</h5>
+<div class="jsonCode" style="padding: 10px;">
+    {
+    "RequestId": "4e8d82b8-e738-4180-8530-0f7c8eb70c1f",
+    "Success": true,
+    "Message": "O item foi aprovado com sucesso"
+    }
+</div>
+
+<h5>Em caso de erro:</h5>
+<div class="jsonCode" style="padding: 10px;">
+    {
+    "RequestId": "4e8d82b8-e738-4180-8530-0f7c8eb70c1f",
+    "Success": false,
+    "Message": "AppCode ou AppSecret inválido"
+    }
+</div>

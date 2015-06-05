@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PontoRemoto.Web", "PontoRemoto.Web\PontoRemoto.Web.csproj", "{31610B49-427F-4FB7-91E0-E4C90517FA33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PontoRemoto.Infra", "PontoRemoto.Infra\PontoRemoto.Infra.csproj", "{241E67D0-3448-46C4-8815-E2D70E75824F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PontoRemoto.Application", "PontoRemoto.Application\PontoRemoto.Application.csproj", "{7C70421D-8143-46EA-A4E7-A37A22A08A8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{59BDAC5D-C2BB-4A70-8889-2D421F58B5B3}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PontoRemoto.DependencyResolution", "PontoRemoto.DependencyResolution\PontoRemoto.DependencyResolution.csproj", "{116C2E21-72C7-4385-8635-2E8ADCD71E11}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mblit.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PontoRemoto.Application\\PontoRemoto.Application.csproj
+		SccProjectName1 = PontoRemoto.Application
+		SccLocalPath1 = PontoRemoto.Application
+		SccProjectUniqueName2 = PontoRemoto.Infra\\PontoRemoto.Infra.csproj
+		SccProjectName2 = PontoRemoto.Infra
+		SccLocalPath2 = PontoRemoto.Infra
+		SccProjectUniqueName3 = PontoRemoto.Web\\PontoRemoto.Web.csproj
+		SccProjectName3 = PontoRemoto.Web
+		SccLocalPath3 = PontoRemoto.Web
+		SccProjectUniqueName4 = PontoRemoto.DependencyResolution\\PontoRemoto.DependencyResolution.csproj
+		SccProjectName4 = PontoRemoto.DependencyResolution
+		SccLocalPath4 = PontoRemoto.DependencyResolution
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Staging|Any CPU = Staging|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31610B49-427F-4FB7-91E0-E4C90517FA33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31610B49-427F-4FB7-91E0-E4C90517FA33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31610B49-427F-4FB7-91E0-E4C90517FA33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31610B49-427F-4FB7-91E0-E4C90517FA33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31610B49-427F-4FB7-91E0-E4C90517FA33}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{31610B49-427F-4FB7-91E0-E4C90517FA33}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{241E67D0-3448-46C4-8815-E2D70E75824F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{241E67D0-3448-46C4-8815-E2D70E75824F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{241E67D0-3448-46C4-8815-E2D70E75824F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{241E67D0-3448-46C4-8815-E2D70E75824F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{241E67D0-3448-46C4-8815-E2D70E75824F}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{241E67D0-3448-46C4-8815-E2D70E75824F}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{7C70421D-8143-46EA-A4E7-A37A22A08A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C70421D-8143-46EA-A4E7-A37A22A08A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C70421D-8143-46EA-A4E7-A37A22A08A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C70421D-8143-46EA-A4E7-A37A22A08A8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C70421D-8143-46EA-A4E7-A37A22A08A8C}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{7C70421D-8143-46EA-A4E7-A37A22A08A8C}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{116C2E21-72C7-4385-8635-2E8ADCD71E11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{116C2E21-72C7-4385-8635-2E8ADCD71E11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{116C2E21-72C7-4385-8635-2E8ADCD71E11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{116C2E21-72C7-4385-8635-2E8ADCD71E11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{116C2E21-72C7-4385-8635-2E8ADCD71E11}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{116C2E21-72C7-4385-8635-2E8ADCD71E11}.Staging|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

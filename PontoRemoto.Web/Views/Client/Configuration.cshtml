@@ -1,0 +1,100 @@
+﻿@using PontoRemoto.Application.Resources
+
+@model PontoRemoto.Web.Models.ClientConfigurationViewModel
+
+@{
+    ViewBag.Title = Labels.Configuration;
+}
+
+@section topcontent
+{
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-9">
+            <h2>@Labels.Configuration</h2>
+
+            <ol class="breadcrumb">
+                <li>
+                    <a href="@Url.Action("Admin", "Home")">@Labels.Home</a>
+                </li>
+                <li class="active">
+                    <strong>@Labels.Configuration</strong>
+                </li>
+            </ol>
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("Configuration", "Client", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <h4>Antes de começar a utilizar o sistema, você deve fazer algumas configurações básicas:</h4>
+    <hr />
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.WorkerIdentificationLabel, new { @class = "col-lg-3 control-label" })
+
+        <div class="col-lg-9">
+            @Html.EditorFor(model => model.WorkerIdentificationLabel, new { @class = "form-control", placeholder = "Ex.: Matrícula, CPF" })
+            @Html.ValidationMessageFor(model => model.WorkerIdentificationLabel)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.UrlCheckinNotification, new { @class = "col-lg-3 control-label" })
+
+        <div class="col-lg-9" style="padding-top: 7px">
+            Esta URL será utilizada para fazer a integração online com o seu sistema.<br />
+            Quando o seu funcionário registrar o ponto no aplicativo, nós iremos lhe
+            notificar nessa URL.<br />
+            Veja as instruções de como deverá ser o funcionamento dessa URL no
+            <a href="#" onclick="openTest('#urlTest', '#UrlCheckinNotification')">Formulário de teste e instruções</a>.<br />
+
+            @Html.EditorFor(model => model.UrlCheckinNotification, new { @class = "form-control large", placeholder = "Ex.: https://www.example.com/receiveinfo" })
+            @Html.ValidationMessageFor(model => model.UrlCheckinNotification)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-3 col-lg-9">
+            <input type="submit" value="@Labels.Save" class="btn btn-primary" />
+        </div>
+    </div>
+}
+
+@*@Html.Partial("_UrlTest")*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".fancybox").fancybox();
+            $(".jsonCode").jsonFormat();
+        });
+
+        function openTest(testSelector, urlSelector) {
+            $(testSelector + " input#url").val($(urlSelector).val());
+            $(testSelector + " a.testFormTabLink").tab("show");
+            $(testSelector + " .testResultsTab div#status").html("");
+
+            $(testSelector + " .testFormTab input#appCode").val("@Model.AppCode");
+            $(testSelector + " .testFormTab input#appSecret").val("@Model.AppSecret");
+
+            $.fancybox.open($(testSelector));
+        }
+
+        function executeTest(testSelector) {
+            $(testSelector + " a.testResultsTabLink").tab("show");
+            $(testSelector + " .testResultsTab div#status").text("Aguarde...");
+
+            $.post('@Url.Action("TestUrl", "ServiceIntegration")', $(testSelector + " .testFormTab form").serialize(), function (result) {
+                $(testSelector + " .testResultsTab div#status").text(result.Data);
+                $(testSelector + " .testResultsTab div#status").jsonFormat();
+            });
+        }
+    </script>
+}
